@@ -1,11 +1,12 @@
 import os
 from dotenv import load_dotenv
 
+# Load environment variables from a .env file
 load_dotenv()
 
 class Config:
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-    WEBHOOK_URL = os.environ.get("WEBHOOK_URL", None)  # Add your webhook URL here
+    WEBHOOK_URL = os.environ.get("WEBHOOK_URL", None)  # Optional: add your webhook URL here
     SOURCE = "https://github.com/Artis7eeR/ForwardTagRemoverBot"
     START_TEXT = """
 Hi [{}](tg://user?id={}) 
