@@ -6,7 +6,7 @@ load_dotenv()
 
 class Config:
     BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
-    WEBHOOK_URL = os.environ.get("WEBHOOK_URL", None)  # Optional: add your webhook URL here
+    WEBHOOK_URL = os.environ.get("WEBHOOK_URL", None)  # Set your webhook URL in the .env
     SOURCE = "https://github.com/Artis7eeR/ForwardTagRemoverBot"
     START_TEXT = """
 Hi [{}](tg://user?id={}) 
