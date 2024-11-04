@@ -1,4 +1,5 @@
 import logging
+import os  # Import os module here
 from telegram.ext import (
     filters,
     ApplicationBuilder,
@@ -50,8 +51,8 @@ def main():
     # Use webhooks for Heroku
     if Config.WEBHOOK_URL:
         bot.run_webhook(listen='0.0.0.0',
-                        port=int(os.environ.get('PORT', 8443)),  # Use port from Heroku
-                        url_path=Config.BOT_TOKEN)  # Set the url path to the bot token
+                        port=int(os.environ.get('PORT', 8080)),  # Use port from Heroku
+                        url_path=Config.BOT_TOKEN)  # Set the URL path to the bot token
         logging.info(f'Webhook set to {Config.WEBHOOK_URL}/{Config.BOT_TOKEN}')
     else:
         bot.run_polling()
